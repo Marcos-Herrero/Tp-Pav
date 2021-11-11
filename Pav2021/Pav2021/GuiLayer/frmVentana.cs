@@ -79,6 +79,12 @@ namespace Pav2021.GuiLayer
             frmReporteHistorico rep = new frmReporteHistorico();
             rep.ShowDialog();
         }
+
+        private void administrarPerfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPerfiles rep = new frmPerfiles();
+            rep.ShowDialog();
+        }
     }
 
 }

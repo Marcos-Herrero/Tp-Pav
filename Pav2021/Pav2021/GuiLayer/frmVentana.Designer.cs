@@ -42,6 +42,7 @@ namespace Pav2021.GuiLayer
             this.administrarUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historicoAsignacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrarPerfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,8 +59,8 @@ namespace Pav2021.GuiLayer
             this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(686, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(915, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -68,25 +69,26 @@ namespace Pav2021.GuiLayer
             this.archivoToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.archivoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // formulariosToolStripMenuItem
             // 
             this.formulariosToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.formulariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.formulariosToolStripMenuItem1});
+            this.formulariosToolStripMenuItem1,
+            this.administrarPerfilesToolStripMenuItem});
             this.formulariosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.formulariosToolStripMenuItem.Name = "formulariosToolStripMenuItem";
-            this.formulariosToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.formulariosToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.formulariosToolStripMenuItem.Text = "Perfiles";
             // 
             // formulariosToolStripMenuItem1
             // 
             this.formulariosToolStripMenuItem1.BackColor = System.Drawing.SystemColors.Control;
             this.formulariosToolStripMenuItem1.Name = "formulariosToolStripMenuItem1";
-            this.formulariosToolStripMenuItem1.Size = new System.Drawing.Size(177, 22);
-            this.formulariosToolStripMenuItem1.Text = "Administrar Perfiles";
+            this.formulariosToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.formulariosToolStripMenuItem1.Text = "Alta Perfil";
             this.formulariosToolStripMenuItem1.Click += new System.EventHandler(this.formulariosToolStripMenuItem1_Click);
             // 
             // permisosToolStripMenuItem
@@ -95,13 +97,13 @@ namespace Pav2021.GuiLayer
             this.administrarPermisosToolStripMenuItem});
             this.permisosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.permisosToolStripMenuItem.Name = "permisosToolStripMenuItem";
-            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.permisosToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.permisosToolStripMenuItem.Text = "Permisos";
             // 
             // administrarPermisosToolStripMenuItem
             // 
             this.administrarPermisosToolStripMenuItem.Name = "administrarPermisosToolStripMenuItem";
-            this.administrarPermisosToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.administrarPermisosToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
             this.administrarPermisosToolStripMenuItem.Text = "Administrar Permisos";
             this.administrarPermisosToolStripMenuItem.Click += new System.EventHandler(this.administrarPermisosToolStripMenuItem_Click);
             // 
@@ -112,7 +114,7 @@ namespace Pav2021.GuiLayer
             this.usuariosToolStripMenuItem});
             this.soporteToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.soporteToolStripMenuItem.Name = "soporteToolStripMenuItem";
-            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.soporteToolStripMenuItem.Text = "Soporte";
             // 
             // formulariosToolStripMenuItem3
@@ -120,13 +122,13 @@ namespace Pav2021.GuiLayer
             this.formulariosToolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.administrarUsuariosToolStripMenuItem});
             this.formulariosToolStripMenuItem3.Name = "formulariosToolStripMenuItem3";
-            this.formulariosToolStripMenuItem3.Size = new System.Drawing.Size(137, 22);
+            this.formulariosToolStripMenuItem3.Size = new System.Drawing.Size(170, 26);
             this.formulariosToolStripMenuItem3.Text = "Formularios";
             // 
             // administrarUsuariosToolStripMenuItem
             // 
             this.administrarUsuariosToolStripMenuItem.Name = "administrarUsuariosToolStripMenuItem";
-            this.administrarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.administrarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
             this.administrarUsuariosToolStripMenuItem.Text = "Administrar formularios";
             this.administrarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.administrarUsuariosToolStripMenuItem_Click);
             // 
@@ -135,14 +137,14 @@ namespace Pav2021.GuiLayer
             this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.administrarUsuarios});
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // administrarUsuarios
             // 
             this.administrarUsuarios.Enabled = false;
             this.administrarUsuarios.Name = "administrarUsuarios";
-            this.administrarUsuarios.Size = new System.Drawing.Size(183, 22);
+            this.administrarUsuarios.Size = new System.Drawing.Size(227, 26);
             this.administrarUsuarios.Text = "Administrar usuarios";
             this.administrarUsuarios.Click += new System.EventHandler(this.administrarUsuariosToolStripMenuItem1_Click);
             // 
@@ -151,27 +153,34 @@ namespace Pav2021.GuiLayer
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.historicoAsignacionesToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // historicoAsignacionesToolStripMenuItem
             // 
             this.historicoAsignacionesToolStripMenuItem.Name = "historicoAsignacionesToolStripMenuItem";
-            this.historicoAsignacionesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.historicoAsignacionesToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
             this.historicoAsignacionesToolStripMenuItem.Text = "Historico Asignaciones";
             this.historicoAsignacionesToolStripMenuItem.Click += new System.EventHandler(this.historicoAsignacionesToolStripMenuItem_Click);
             // 
+            // administrarPerfilesToolStripMenuItem
+            // 
+            this.administrarPerfilesToolStripMenuItem.Name = "administrarPerfilesToolStripMenuItem";
+            this.administrarPerfilesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.administrarPerfilesToolStripMenuItem.Text = "Administrar perfiles";
+            this.administrarPerfilesToolStripMenuItem.Click += new System.EventHandler(this.administrarPerfilesToolStripMenuItem_Click);
+            // 
             // frmVentana
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Pav2021.Properties.Resources.prueba;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(686, 390);
+            this.ClientSize = new System.Drawing.Size(915, 480);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmVentana";
             this.Text = "Principal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmVentana_FormClosing);
@@ -198,5 +207,6 @@ namespace Pav2021.GuiLayer
         private System.Windows.Forms.ToolStripMenuItem administrarUsuarios;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historicoAsignacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrarPerfilesToolStripMenuItem;
     }
 }

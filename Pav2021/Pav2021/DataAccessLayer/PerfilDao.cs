@@ -11,7 +11,7 @@ namespace Pav2021.DataAccessLayer
     {
         internal bool Create(Perfil perfil)
         {
-            var string_conexion = "Data Source=DESKTOP-82E3KBS\\SQLEXPRESS;Initial Catalog=DB_TP;Integrated Security=true;";
+            var string_conexion = "Data Source=NBAR15232;Initial Catalog=DB_TP;Integrated Security=true;";
 
             // Se utiliza para sentencias SQL del tipo “Insert/Update/Delete”
             SqlConnection dbConnection = new SqlConnection();
@@ -90,7 +90,7 @@ namespace Pav2021.DataAccessLayer
             return true;
             
         }
-
+        
         public IList<Perfil> GetAll()
         {
             List<Perfil> listadoPerfiles = new List<Perfil>();

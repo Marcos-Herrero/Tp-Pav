@@ -109,12 +109,6 @@
     <Compile Include="GuiLayer\frmVentana.Designer.cs">
       <DependentUpon>frmVentana.cs</DependentUpon>
     </Compile>
-    <Compile Include="GuiLayer\Perfiles\frmABMPerfiles.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GuiLayer\Perfiles\frmABMPerfiles.Designer.cs">
-      <DependentUpon>frmABMPerfiles.cs</DependentUpon>
-    </Compile>
     <Compile Include="GuiLayer\Perfiles\frmPerfiles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,9 +173,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GuiLayer\frmVentana.resx">
       <DependentUpon>frmVentana.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GuiLayer\Perfiles\frmABMPerfiles.resx">
-      <DependentUpon>frmABMPerfiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuiLayer\Perfiles\frmPerfiles.resx">
       <DependentUpon>frmPerfiles.cs</DependentUpon>

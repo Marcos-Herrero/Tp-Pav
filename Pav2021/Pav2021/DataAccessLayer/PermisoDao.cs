@@ -51,6 +51,22 @@ namespace Pav2021.DataAccessLayer
 
             return null;
         }
+        public IList<Permiso> GetPermisosByIdPerfil(int idPerfil)
+        {
+            List<Permiso> lst = new List<Permiso>();
+            String strSql = string.Concat(" SELECT f.id_formulario , f.nombre , ",
+                                              "  p.id_perfil, p.nombre  ",
+                                              "   FROM Formularios f INNER JOIN Permisos per ON f.id_formulario = per.id_formulario ",
+                                              "   INNER JOIN Perfiles p ON per.id_perfil=p.id_perfil",
+                                              "   WHERE per.id_perfil = @id_perfil");
+            var parametros = new Dictionary<string, object>();           
+            parametros.Add("id_perfil", idPerfil);
+            var resultado = DataManager.GetInstance().ConsultaSql(strSql, parametros);
+            foreach (DataRow row in resultado.Rows)
+                lst.Add(ObjectMapping(row));
+
+            return lst;
+        }
 
         public IList<Permiso> GetByFilters(Dictionary<string, object> parametros)
         {
@@ -123,9 +139,11 @@ namespace Pav2021.DataAccessLayer
         {
             Permiso oPermiso = new Permiso();
             oPermiso.Perfil = new Perfil();
+            oPermiso.Perfil.Id_Perfil= Convert.ToInt32(row["id_perfil"].ToString());
             oPermiso.Perfil.Nombre = row["nombre"].ToString();
             oPermiso.Formulario = new Formulario();
             oPermiso.Formulario.Nombre = row["nombre"].ToString();
+            oPermiso.Formulario.Id_Formulario = Convert.ToInt32(row["Id_Formulario"].ToString());
             return oPermiso;
         }           
         
