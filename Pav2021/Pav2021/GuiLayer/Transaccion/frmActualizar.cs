@@ -55,6 +55,7 @@ namespace Pav2021
                     {
                         this.Text = "Actualizar permiso";
                         // Recuperar permiso seleccionado en la grilla 
+                        LlenarCombo(_cboFormularios, oFormularioService.ObtenerTodos(), "Nombre", "id_Formulario");
                         dgvDetalle.DataSource = listaPermisos;
                         MostrarDatos();                        
                         txtPerfil.Enabled = true;
