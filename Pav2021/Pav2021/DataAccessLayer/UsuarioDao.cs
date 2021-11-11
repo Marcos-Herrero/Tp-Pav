@@ -110,7 +110,7 @@ namespace Pav2021.DataAccessLayer
 
         internal bool Create(Usuario oUsuario)
         {
-            var string_conexion = "Data Source=NBAR15232;Initial Catalog=DB_TP;Integrated Security=true;";
+            var string_conexion = "Data Source=DESKTOP-82E3KBS\\SQLEXPRESS;Initial Catalog=DB_TP;Integrated Security=true;";
 
             SqlConnection dbConnection = new SqlConnection();
             SqlTransaction dbTransaction = null;

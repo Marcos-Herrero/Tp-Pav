@@ -10,15 +10,17 @@ using System.Windows.Forms;
 
 namespace Pav2021.Reportes
 {
-    public partial class frmReporteHistorico : Form
+    public partial class femRepHis : Form
     {
-        public frmReporteHistorico()
+        public femRepHis()
         {
             InitializeComponent();
         }
 
-        private void frmReporteHistorico_Load(object sender, EventArgs e)
+        private void femRepHis_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'DsReportes.DataTable1' Puede moverla o quitarla según sea necesario.
+            this.DataTable1TableAdapter.Fill(this.DsReportes.DataTable1);
 
             this.reportViewer1.RefreshReport();
         }
