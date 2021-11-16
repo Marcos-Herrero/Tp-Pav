@@ -115,12 +115,22 @@ namespace Pav2021
                     Nombre = txtPerfil.Text,
                     DetallePermisos = listaPermisos                  
                 };
-
-                if (oPerfilService.ValidarDatos(perfil))
+                if (formMode.Equals(FormMode.nuevo))
                 {
                     oPerfilService.CrearPerfil(perfil);
 
                     MessageBox.Show(string.Concat("El detalle nro: ", perfil.Id_Perfil, " se generó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                    InicializarFormulario();
+                }
+                else
+                {
+                    
+
+                    oPerfilService.ActualizarPerfil(perfil, oPerfilSelected.Id_Perfil);
+
+                    MessageBox.Show(string.Concat("El detalle nro: ", perfil.Id_Perfil, " se actualizó correctamente."), "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                     InicializarFormulario();
@@ -131,6 +141,8 @@ namespace Pav2021
             {
                 MessageBox.Show("Error al registrar el perfil! " + ex.Message + ex.StackTrace, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            this.Close();
+
         }
         private bool ValidarDatos()
         {
@@ -204,7 +216,9 @@ namespace Pav2021
 
         private void _cboFormularios_Click(object sender, EventArgs e)
         {
-            txtPerfil.Enabled = false;
+            if (formMode.Equals(FormMode.nuevo)) { txtPerfil.Enabled = false; }
+            else { txtPerfil.Enabled = true; }
+            
         }
     }
 }

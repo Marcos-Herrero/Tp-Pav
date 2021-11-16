@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using Pav2021.BusinessLayer;
 using Pav2021.Entities;
 
 namespace Pav2021.DataAccessLayer
 {
     class PerfilDao
     {
+        private PermisoService oPermisoService= new PermisoService();
         internal bool Create(Perfil perfil)
         {
             var string_conexion = "Data Source=NBAR15232;Initial Catalog=DB_TP;Integrated Security=true;";
@@ -173,19 +175,102 @@ namespace Pav2021.DataAccessLayer
 
         
 
-        internal bool Update(Perfil oPerfil)
-        {
-            string str_sql = "     UPDATE Perfiles " +
+        internal bool Update(Perfil oPerfil, int id)
+        {             
+            var string_conexion = "Data Source=NBAR15232;Initial Catalog=DB_TP;Integrated Security=true;";
+            SqlConnection dbConnection = new SqlConnection();           
+            SqlTransaction dbTransaction = null;
+            try
+            {
+                dbConnection.ConnectionString = string_conexion;
+                dbConnection.Open();
+                
+                dbTransaction = dbConnection.BeginTransaction();
+                
+                if(oPerfil.Nombre != "") {
+                    SqlCommand insertPerfil = new SqlCommand();
+                    insertPerfil.Connection = dbConnection;
+                    insertPerfil.CommandType = CommandType.Text;
+                    insertPerfil.Transaction = dbTransaction;
+                    insertPerfil.CommandText = "     UPDATE Perfiles " +
                              "     SET nombre=@nombre" +
-                             "     WHERE id_perfil=@id_perfil";
+                              "     WHERE id_perfil=@id_perfil";
+                    insertPerfil.Parameters.AddWithValue("Nombre", oPerfil.Nombre);
+                    insertPerfil.Parameters.AddWithValue("id_perfil", id);
+                    insertPerfil.ExecuteNonQuery();
+                }
+                
+                List<Permiso> lista = (List<Permiso>)oPermisoService.GetPermisosByIdPerfil(id);
+                if(lista.Count >0 && oPerfil.DetallePermisos.Count > 0 && oPerfil.DetallePermisos.Equals(lista))
+                {
+                    dbTransaction.Commit();
+                }
+                else
+                {
+                    foreach (var permisoDetalle in oPerfil.DetallePermisos)
+                    {
+                        if (lista.Exists(x => x.Perfil.Id_Perfil == permisoDetalle.Perfil.Id_Perfil && x.Formulario.Id_Formulario== permisoDetalle.Formulario.Id_Formulario))
+                        { }
+                        else
+                        { //INSERT PERFIL
+                            SqlCommand insertDetalle = new SqlCommand();
+                            insertDetalle.Connection = dbConnection;
+                            insertDetalle.CommandType = CommandType.Text;
+                            insertDetalle.Transaction = dbTransaction;
+                            // Establece la instrucción a ejecutar
+                            insertDetalle.CommandText = string.Concat(" INSERT INTO [dbo].[Permisos] ",
+                                                                "           ([id_formulario]   ",
+                                                                "           ,[id_perfil]         ",
+                                                                "           ,[borrado])             ",
+                                                                "     VALUES                        ",
+                                                                "           (@id_formulario           ",
+                                                                "           ,@id_perfil          ",
+                                                                "           ,@borrado)               ");
 
-            var parametros = new Dictionary<string, object>();
-            parametros.Add("nombre", oPerfil.Nombre);
-            parametros.Add("id_perfil", oPerfil.Id_Perfil);
+                            insertDetalle.Parameters.AddWithValue("id_perfil", id);
+                            insertDetalle.Parameters.AddWithValue("id_formulario", permisoDetalle.Formulario.Id_Formulario);
+                            insertDetalle.Parameters.AddWithValue("borrado", false);
+
+                            insertDetalle.ExecuteNonQuery();
+                        }
+                        
+                    }
+                    foreach (Permiso permiso in lista)
+                    {
+                        foreach (var permisoDetalle in oPerfil.DetallePermisos)
+                        {
+                            if (lista.Exists(x => x.Perfil.Id_Perfil == permisoDetalle.Perfil.Id_Perfil && x.Formulario.Id_Formulario == permisoDetalle.Formulario.Id_Formulario)) { }
+                            else
+                            { //INSERT PERFIL
+                                SqlCommand insertDetalle = new SqlCommand();
+                                insertDetalle.Connection = dbConnection;
+                                insertDetalle.CommandType = CommandType.Text;
+                                insertDetalle.Transaction = dbTransaction;
+                                // Establece la instrucción a ejecutar
+                                insertDetalle.CommandText = string.Concat(" Delete [dbo].[Permisos] ",
+                                                                    "    Where    [id_formulario] = @id_formulario             ",
+                                                                    "          and [id_perfil]=@id_perfil");
+
+                                insertDetalle.Parameters.AddWithValue("id_perfil", id);
+                                insertDetalle.Parameters.AddWithValue("id_formulario", permiso.Formulario.Id_Formulario);
 
 
-            // Si una fila es afectada por la inserción retorna TRUE. Caso contrario FALSE
-            return (DataManager.GetInstance().EjecutarSql(str_sql, parametros) == 1);
+                                insertDetalle.ExecuteNonQuery();
+                            }
+                        }
+                            
+
+                    }
+                    dbTransaction.Commit();
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                dbTransaction.Rollback();
+                throw ex;
+            }
+            return true;
         }
 
         internal bool Delete(Perfil oPerfil)

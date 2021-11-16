@@ -54,8 +54,8 @@ namespace Pav2021.DataAccessLayer
         public IList<Permiso> GetPermisosByIdPerfil(int idPerfil)
         {
             List<Permiso> lst = new List<Permiso>();
-            String strSql = string.Concat(" SELECT f.id_formulario , f.nombre , ",
-                                              "  p.id_perfil, p.nombre  ",
+
+            String strSql = string.Concat("  select *  ",
                                               "   FROM Formularios f INNER JOIN Permisos per ON f.id_formulario = per.id_formulario ",
                                               "   INNER JOIN Perfiles p ON per.id_perfil=p.id_perfil",
                                               "   WHERE per.id_perfil = @id_perfil");

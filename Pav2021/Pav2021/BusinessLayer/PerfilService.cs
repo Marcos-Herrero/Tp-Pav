@@ -25,9 +25,9 @@ namespace Pav2021.BusinessLayer
         {
             return oPerfilDao.Create(oPerfil);
         }
-        internal bool ActualizarPerfil(Perfil oPerfil)
+        internal bool ActualizarPerfil(Perfil oPerfil, int id )
         {
-            return oPerfilDao.Update(oPerfil);
+            return oPerfilDao.Update(oPerfil, id);
         }
 
         internal bool EliminarPerfil(Perfil oPerfil)
