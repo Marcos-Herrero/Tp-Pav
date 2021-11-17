@@ -113,10 +113,23 @@ namespace Pav2021.GUILayer.Perfiles
 
         private void btnQuitar_Click(System.Object sender, System.EventArgs e)
         {
-           
-
             // Asi obtenemos el item seleccionado de la grilla.
             var perfil = (Perfil)dgvPerfiles.CurrentRow.DataBoundItem;
+            try
+            {
+                if (oPerfilService.EliminarPerfil(perfil))
+                {
+                    MessageBox.Show("Perfil Borrado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show("No se puede eliminar perfil", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch { }
+
+            
 
            
 
