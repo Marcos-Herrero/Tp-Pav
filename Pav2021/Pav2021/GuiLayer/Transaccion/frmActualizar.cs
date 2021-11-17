@@ -13,10 +13,14 @@ namespace Pav2021
 {
     public partial class frmActualizar : Form
     {
+
+        private FormMode formMode = FormMode.nuevo;
         private readonly BindingList<Permiso> listaPermisos;
         private UsuarioService oUsuarioService;
         private PerfilService oPerfilService;
+        private PermisoService oPermisoService;
         private FormularioService oFormularioService;
+        private Perfil oPerfilSelected;
 
         public frmActualizar()
         {
@@ -25,16 +29,65 @@ namespace Pav2021
             oPerfilService = new PerfilService();
             oFormularioService = new FormularioService();
             listaPermisos = new BindingList<Permiso>();
-
+            oPermisoService = new PermisoService();
         }
+        public enum FormMode
+        {
+            nuevo,
+            actualizar,            
+        }
+
 
         private void frmActualizar_Load(object sender, EventArgs e)
         {
-            LlenarCombo(_cboFormularios, oFormularioService.ObtenerTodos(), "Nombre", "id_Formulario");
-            dgvDetalle.DataSource = listaPermisos;
-            this.txtPerfil.TextChanged += new System.EventHandler(this.txtPerfil_TextChanged);
+            switch (formMode)           
+            {
+                case FormMode.nuevo:
+                    {
+                        this.Text = "Nuevo permiso";
+                        LlenarCombo(_cboFormularios, oFormularioService.ObtenerTodos(), "Nombre", "id_Formulario");
+                        dgvDetalle.DataSource = listaPermisos;
+                        this.txtPerfil.TextChanged += new System.EventHandler(this.txtPerfil_TextChanged);
+                        break;
+                    }
+
+                case FormMode.actualizar:
+                    {
+                        this.Text = "Actualizar permiso";
+                        // Recuperar permiso seleccionado en la grilla 
+                        LlenarCombo(_cboFormularios, oFormularioService.ObtenerTodos(), "Nombre", "id_Formulario");
+                        dgvDetalle.DataSource = listaPermisos;
+                        MostrarDatos();                        
+                        txtPerfil.Enabled = true;
+                        dpbDetalle.Enabled = true;
+                        btnNuevo.Enabled = false;
+                        break;
+                    }
+           
+            }
+                  
 
         }
+        public void InicializarFormulario(FormMode op, Perfil perfilSelected)
+        {
+            formMode = op;
+            oPerfilSelected = perfilSelected;
+        }
+        private void MostrarDatos()
+        {
+            if (oPerfilSelected != null)
+            {
+                txtPerfil.Text = oPerfilSelected.Nombre;
+                List<Permiso> lst = new List<Permiso>();
+                lst= (List<Permiso>)oPermisoService.GetPermisosByIdPerfil(oPerfilSelected.Id_Perfil);
+                foreach(Permiso per in lst)
+                {
+                    listaPermisos.Add(per);
+                }
+                
+            }
+        }
+
         private void _btnAgregar_Click(object sender, EventArgs e)
         {
 

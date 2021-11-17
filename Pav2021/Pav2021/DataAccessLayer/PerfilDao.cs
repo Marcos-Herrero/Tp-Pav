@@ -90,7 +90,7 @@ namespace Pav2021.DataAccessLayer
             return true;
             
         }
-
+        
         public IList<Perfil> GetAll()
         {
             List<Perfil> listadoPerfiles = new List<Perfil>();

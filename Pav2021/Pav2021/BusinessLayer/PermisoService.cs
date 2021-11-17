@@ -40,5 +40,9 @@ namespace Pav2021.BusinessLayer
         {
             return oPermisoDao.GetByFilters(filtros);
         }
+        public IList<Permiso> GetPermisosByIdPerfil(int idPerfil)
+        {
+            return oPermisoDao.GetPermisosByIdPerfil(idPerfil);
+        }
     }
 }

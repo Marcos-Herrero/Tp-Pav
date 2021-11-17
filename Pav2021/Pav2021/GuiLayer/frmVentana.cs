@@ -76,7 +76,19 @@ namespace Pav2021.GuiLayer
 
         private void historicoAsignacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmReporteHistorico rep = new frmReporteHistorico();
+            femRepHis rep = new femRepHis();
+            rep.ShowDialog();
+        }
+
+        private void administrarPerfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPerfiles rep = new frmPerfiles();
+            rep.ShowDialog();
+        }
+
+        private void usuariosPorPerfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRepUsu rep = new frmRepUsu();
             rep.ShowDialog();
         }
     }

@@ -41,14 +41,7 @@ namespace Pav2021.GUILayer.Perfiles
             cbo.DisplayMember = display;
             cbo.ValueMember = value;
             cbo.SelectedIndex = -1;
-        }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            frmABMPerfiles formulario = new frmABMPerfiles();
-            formulario.ShowDialog();
-            btnConsultar_Click(sender, e);
-        }
+        }    
 
         private void chkTodos_CheckedChanged(object sender, EventArgs e)
         {
@@ -102,13 +95,12 @@ namespace Pav2021.GUILayer.Perfiles
 
         private void btnEditar_Click(System.Object sender, System.EventArgs e)
         {
-            frmABMPerfiles formulario = new frmABMPerfiles();
-
-            // Asi obtenemos el item seleccionado de la grilla.
+            frmActualizar frm = new frmActualizar();
             var perfil = (Perfil)dgvPerfiles.CurrentRow.DataBoundItem;
-            formulario.InicializarFormulario(frmABMPerfiles.FormMode.actualizar, perfil);
-            formulario.ShowDialog();
-
+            frm.InicializarFormulario(frmActualizar.FormMode.actualizar, perfil);
+            frm.ShowDialog();
+            // Asi obtenemos el item seleccionado de la grilla.
+            
             //Forzamos el evento Click para actualizar el DataGridView.
             btnConsultar_Click(sender, e);
         }
@@ -121,13 +113,12 @@ namespace Pav2021.GUILayer.Perfiles
 
         private void btnQuitar_Click(System.Object sender, System.EventArgs e)
         {
-            frmABMPerfiles formulario = new frmABMPerfiles();
+           
 
             // Asi obtenemos el item seleccionado de la grilla.
             var perfil = (Perfil)dgvPerfiles.CurrentRow.DataBoundItem;
 
-            formulario.InicializarFormulario(frmABMPerfiles.FormMode.eliminar, perfil);
-            formulario.ShowDialog();
+           
 
             //Forzamos el evento Click para actualizar el DataGridView.
             btnConsultar_Click(sender, e);
