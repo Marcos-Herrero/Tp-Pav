@@ -12,8 +12,8 @@ namespace Pav2021.DataAccessLayer
         {
             List<Permiso> listadoPermisos = new List<Permiso>();
 
-            var strSql = string.Concat(" SELECT f.nombre, ",
-                                              "    p.nombre  ",
+            var strSql = string.Concat(" SELECT f.nombre, f.id_formulario,  ",
+                                              "    p.nombre, p.id_perfil ",
                                               "   FROM Formularios f INNER JOIN Permisos per ON f.id_formulario = per.id_formulario ",
                                               "   INNER JOIN Perfiles p ON per.id_perfil=p.id_perfil");
                                               
@@ -71,8 +71,8 @@ namespace Pav2021.DataAccessLayer
         public IList<Permiso> GetByFilters(Dictionary<string, object> parametros)
         {
             List<Permiso> lst = new List<Permiso>();
-            String strSql = string.Concat(" SELECT f.nombre, ",
-                                              "    p.nombre  ",
+            String strSql = string.Concat(" SELECT f.nombre, f.id_formulario,  ",
+                                              "    p.nombre, p.id_perfil ",
                                               "   FROM Formularios f INNER JOIN Permisos per ON f.id_formulario = per.id_formulario ",
                                               "   INNER JOIN Perfiles p ON per.id_perfil=p.id_perfil",
                                               "   WHERE 1=1");
@@ -123,9 +123,9 @@ namespace Pav2021.DataAccessLayer
         }
         internal bool Delete(Permiso oPermiso)
         {
-            string str_sql = "  UPDATE Permisos" +
-                            "     SET borrado = 1" +
-                            "  WHERE id_formulario =@id_formulario && id_perfil=@id_perfil";
+            string str_sql = "  UPDATE Permisos " +
+                            "  SET borrado = 1" +
+                            "  WHERE id_formulario =@id_formulario && id_perfil=@id_perfil ";
 
             var parametros = new Dictionary<string, object>();
             parametros.Add("id_formulario", oPermiso.Formulario.Id_Formulario);

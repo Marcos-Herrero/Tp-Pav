@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnQuitar = new System.Windows.Forms.Button();
             this.dgvFormularios = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -50,10 +54,9 @@
             // 
             this.btnQuitar.Enabled = false;
             this.btnQuitar.Image = global::Pav2021.Properties.Resources.eliminar;
-            this.btnQuitar.Location = new System.Drawing.Point(139, 509);
-            this.btnQuitar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnQuitar.Location = new System.Drawing.Point(104, 331);
             this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(53, 62);
+            this.btnQuitar.Size = new System.Drawing.Size(40, 40);
             this.btnQuitar.TabIndex = 11;
             this.btnQuitar.UseVisualStyleBackColor = true;
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
@@ -62,33 +65,55 @@
             // 
             this.dgvFormularios.AllowUserToAddRows = false;
             this.dgvFormularios.AllowUserToDeleteRows = false;
-            this.dgvFormularios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFormularios.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvFormularios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFormularios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvFormularios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFormularios.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvFormularios.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvFormularios.Location = new System.Drawing.Point(4, 182);
-            this.dgvFormularios.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvFormularios.Location = new System.Drawing.Point(3, 118);
             this.dgvFormularios.Name = "dgvFormularios";
             this.dgvFormularios.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFormularios.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvFormularios.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvFormularios.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvFormularios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFormularios.Size = new System.Drawing.Size(543, 295);
+            this.dgvFormularios.Size = new System.Drawing.Size(407, 192);
             this.dgvFormularios.TabIndex = 8;
             this.dgvFormularios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellClick);
             // 
             // btnSalir
             // 
             this.btnSalir.Image = global::Pav2021.Properties.Resources.salir;
-            this.btnSalir.Location = new System.Drawing.Point(513, 509);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSalir.Location = new System.Drawing.Point(385, 331);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(53, 62);
+            this.btnSalir.Size = new System.Drawing.Size(40, 40);
             this.btnSalir.TabIndex = 12;
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -97,10 +122,9 @@
             // 
             this.btnEditar.Enabled = false;
             this.btnEditar.Image = global::Pav2021.Properties.Resources.editar;
-            this.btnEditar.Location = new System.Drawing.Point(77, 509);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnEditar.Location = new System.Drawing.Point(58, 331);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(53, 62);
+            this.btnEditar.Size = new System.Drawing.Size(40, 40);
             this.btnEditar.TabIndex = 10;
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -108,10 +132,9 @@
             // btnNuevo
             // 
             this.btnNuevo.Image = global::Pav2021.Properties.Resources.agregar;
-            this.btnNuevo.Location = new System.Drawing.Point(16, 509);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNuevo.Location = new System.Drawing.Point(12, 331);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(53, 62);
+            this.btnNuevo.Size = new System.Drawing.Size(40, 40);
             this.btnNuevo.TabIndex = 9;
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -119,10 +142,9 @@
             // chkTodos
             // 
             this.chkTodos.AutoSize = true;
-            this.chkTodos.Location = new System.Drawing.Point(140, 118);
-            this.chkTodos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkTodos.Location = new System.Drawing.Point(105, 77);
             this.chkTodos.Name = "chkTodos";
-            this.chkTodos.Size = new System.Drawing.Size(71, 24);
+            this.chkTodos.Size = new System.Drawing.Size(56, 17);
             this.chkTodos.TabIndex = 2;
             this.chkTodos.Text = "Todos";
             this.chkTodos.UseVisualStyleBackColor = true;
@@ -131,10 +153,9 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(31, 38);
-            this.lblId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblId.Location = new System.Drawing.Point(23, 25);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(101, 20);
+            this.lblId.Size = new System.Drawing.Size(70, 13);
             this.lblId.TabIndex = 17;
             this.lblId.Text = "Id Formulario:";
             // 
@@ -142,10 +163,9 @@
             // 
             this.btnConsultar.BackgroundImage = global::Pav2021.Properties.Resources.BUSCAR01;
             this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnConsultar.Location = new System.Drawing.Point(431, 84);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnConsultar.Location = new System.Drawing.Point(323, 55);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(70, 40);
+            this.btnConsultar.Size = new System.Drawing.Size(52, 26);
             this.btnConsultar.TabIndex = 3;
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
@@ -153,19 +173,17 @@
             // cboFormularios
             // 
             this.cboFormularios.FormattingEnabled = true;
-            this.cboFormularios.Location = new System.Drawing.Point(140, 70);
-            this.cboFormularios.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboFormularios.Location = new System.Drawing.Point(105, 45);
             this.cboFormularios.Name = "cboFormularios";
-            this.cboFormularios.Size = new System.Drawing.Size(240, 28);
+            this.cboFormularios.Size = new System.Drawing.Size(181, 21);
             this.cboFormularios.TabIndex = 1;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(48, 78);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Location = new System.Drawing.Point(36, 51);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(84, 20);
+            this.lblNombre.Size = new System.Drawing.Size(58, 13);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Formulario:";
             // 
@@ -182,11 +200,9 @@
             this.pnlFiltros.Controls.Add(this.cboFormularios);
             this.pnlFiltros.Controls.Add(this.lblNombre);
             this.pnlFiltros.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnlFiltros.Location = new System.Drawing.Point(16, 18);
-            this.pnlFiltros.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pnlFiltros.Location = new System.Drawing.Point(12, 12);
             this.pnlFiltros.Name = "pnlFiltros";
-            this.pnlFiltros.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pnlFiltros.Size = new System.Drawing.Size(551, 482);
+            this.pnlFiltros.Size = new System.Drawing.Size(413, 313);
             this.pnlFiltros.TabIndex = 8;
             this.pnlFiltros.TabStop = false;
             this.pnlFiltros.Text = "Filtros";
@@ -195,35 +211,33 @@
             // 
             this.btnLimpiar.BackgroundImage = global::Pav2021.Properties.Resources.Empty_Recycle_Bin_2000;
             this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnLimpiar.Location = new System.Drawing.Point(431, 35);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLimpiar.Location = new System.Drawing.Point(323, 23);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(70, 40);
+            this.btnLimpiar.Size = new System.Drawing.Size(52, 26);
             this.btnLimpiar.TabIndex = 19;
             this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
             // cboIdFormulario
             // 
             this.cboIdFormulario.FormattingEnabled = true;
-            this.cboIdFormulario.Location = new System.Drawing.Point(140, 35);
-            this.cboIdFormulario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboIdFormulario.Location = new System.Drawing.Point(105, 23);
             this.cboIdFormulario.Name = "cboIdFormulario";
-            this.cboIdFormulario.Size = new System.Drawing.Size(240, 28);
+            this.cboIdFormulario.Size = new System.Drawing.Size(181, 21);
             this.cboIdFormulario.TabIndex = 18;
             // 
             // frmFormularios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Pav2021.Properties.Resources.prueba;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(588, 605);
+            this.ClientSize = new System.Drawing.Size(441, 393);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.pnlFiltros);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmFormularios";

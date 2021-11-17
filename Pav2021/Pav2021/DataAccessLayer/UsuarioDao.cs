@@ -108,6 +108,25 @@ namespace Pav2021.DataAccessLayer
             return listadoUsuarios;
         }
 
+        public IList<Usuario> GetUsuariosPerfil(int perfil)
+        {
+            List<Usuario> listadoUsuarios = new List<Usuario>();
+            string consulta = "SELECT * " +
+            " FROM Usuarios U JOIN Perfiles P ON U.id_perfil = P.id_perfil " +
+            " where u.id_perfil=@perfil AND U.borrado = 0 ";
+            var parametros = new Dictionary<string, object>();
+            parametros.Add("perfil", perfil);
+
+            var resultadoConsulta = (DataRowCollection)DataManager.GetInstance().ConsultaSql(consulta, parametros).Rows;
+
+            foreach (DataRow row in resultadoConsulta)
+            {
+                listadoUsuarios.Add(MappingUsuario(row));
+            }
+
+            return listadoUsuarios;
+        }
+
         internal bool Create(Usuario oUsuario)
         {
             var string_conexion = "Data Source=DESKTOP-82E3KBS\\SQLEXPRESS;Initial Catalog=DB_TP;Integrated Security=true;";

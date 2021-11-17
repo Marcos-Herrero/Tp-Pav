@@ -1,5 +1,4 @@
 ﻿using System;
-
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +17,7 @@ namespace Pav2021.GUILayer.Perfiles
     public partial class frmPerfiles : Form
     {
 
-        
+
         private PerfilService oPerfilService;
 
         public frmPerfiles()
@@ -31,7 +30,6 @@ namespace Pav2021.GUILayer.Perfiles
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
             LlenarCombo(cboPerfiles, oPerfilService.ObtenerTodos(), "Nombre", "nombre");
-            LlenarCombo(cboIdPerfil, oPerfilService.ObtenerTodos(), "IdPerfil", "id_perfil");
             this.CenterToParent();
         }
 
@@ -41,19 +39,17 @@ namespace Pav2021.GUILayer.Perfiles
             cbo.DisplayMember = display;
             cbo.ValueMember = value;
             cbo.SelectedIndex = -1;
-        }    
+        }
 
         private void chkTodos_CheckedChanged(object sender, EventArgs e)
         {
             {
                 if (chkTodos.Checked)
                 {
-                    cboIdPerfil.Enabled = false;
                     cboPerfiles.Enabled = false;
                 }
                 else
                 {
-                    cboIdPerfil.Enabled = true;
                     cboPerfiles.Enabled = true;
                 }
             }
@@ -78,11 +74,7 @@ namespace Pav2021.GUILayer.Perfiles
                 }
 
                 // Validar si el textBox 'Nombre' esta vacio.
-                if (cboIdPerfil.Text != string.Empty)
-                {
-                    // Si el textBox tiene un texto no vacìo entonces recuperamos el valor del texto
-                    filters.Add("idPerfil", cboIdPerfil.SelectedValue);
-                }
+
 
                 if (filters.Count > 0)
                     dgvPerfiles.DataSource = oPerfilService.ObtenerPerfilesFiltro(filters);
@@ -100,7 +92,7 @@ namespace Pav2021.GUILayer.Perfiles
             frm.InicializarFormulario(frmActualizar.FormMode.actualizar, perfil);
             frm.ShowDialog();
             // Asi obtenemos el item seleccionado de la grilla.
-            
+
             //Forzamos el evento Click para actualizar el DataGridView.
             btnConsultar_Click(sender, e);
         }
@@ -113,12 +105,25 @@ namespace Pav2021.GUILayer.Perfiles
 
         private void btnQuitar_Click(System.Object sender, System.EventArgs e)
         {
-           
-
             // Asi obtenemos el item seleccionado de la grilla.
             var perfil = (Perfil)dgvPerfiles.CurrentRow.DataBoundItem;
+            try
+            {
+                if (oPerfilService.EliminarPerfil(perfil))
+                {
+                    MessageBox.Show("Perfil Borrado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-           
+                }
+                else
+                {
+                    MessageBox.Show("No se puede eliminar perfil", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch { }
+
+
+
+
 
             //Forzamos el evento Click para actualizar el DataGridView.
             btnConsultar_Click(sender, e);
@@ -156,6 +161,6 @@ namespace Pav2021.GUILayer.Perfiles
                 DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
         }
 
-       
+
     }
 }

@@ -18,6 +18,10 @@ namespace Pav2021.BusinessLayer
         {
             return oUsuarioDao.GetUsuarioByID(id);
         }
+        public IList<Usuario> getUsuariosPerfil(int id)
+        {
+            return oUsuarioDao.GetUsuariosPerfil(id);
+        }
 
         public IList<Usuario> getUsuariosList()
         {
