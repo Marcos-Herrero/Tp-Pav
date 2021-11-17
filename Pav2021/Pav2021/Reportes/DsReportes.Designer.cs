@@ -1156,7 +1156,7 @@ namespace Pav2021.Reportes.DsReportesTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=DESKTOP-82E3KBS\\SQLEXPRESS;Initial Catalog=DB_TP;Integrated Security=" +
+            this._connection.ConnectionString = "Data Source=NBAR15232;Initial Catalog=DB_TP;Integrated Security=" +
                 "True";
         }
         
@@ -1329,7 +1329,7 @@ WHERE        (Usuarios.borrado = 0)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=DESKTOP-82E3KBS\\SQLEXPRESS;Initial Catalog=DB_TP;Integrated Security=" +
+            this._connection.ConnectionString = "Data Source=NBAR15232;Initial Catalog=DB_TP;Integrated Security=" +
                 "True";
         }
         

@@ -14,7 +14,7 @@ namespace Pav2021.DataAccessLayer
         private UsuarioService oUsuarioService = new UsuarioService();
         internal bool Create(Perfil perfil)
         {
-            var string_conexion = "Data Source=DESKTOP-82E3KBS\\SQLEXPRESS;Initial Catalog=DB_TP;Integrated Security=true;";
+            var string_conexion = "Data Source=NBAR15232;Initial Catalog=DB_TP;Integrated Security=true;";
 
             // Se utiliza para sentencias SQL del tipo “Insert/Update/Delete”
             SqlConnection dbConnection = new SqlConnection();
@@ -112,10 +112,13 @@ namespace Pav2021.DataAccessLayer
         public IList<Perfil> GetByFilters(Dictionary<string, object> parametros)
         {
             List<Perfil> lst = new List<Perfil>();
-            var strSql = string.Concat(" SELECT p.id_perfil, p.nombre " +
-                                       " FROM Perfiles p " +
-                                       " WHERE p.borrado = 0 ");
+            var strSql = string.Concat(" SELECT p.id_perfil, p.nombre, f.nombre ",
+                                        "   FROM Formularios f  INNER JOIN Permisos per ON f.id_formulario = per.id_formulario ",
+                                         "   INNER JOIN Perfiles p ON per.id_perfil=p.id_perfil",
+                                         "where p.borrado=0");
 
+            if (parametros.ContainsKey("idPerfil"))
+                strSql += " AND (id_perfil = @idPerfil) ";
 
 
             if (parametros.ContainsKey("nombre"))
@@ -175,7 +178,7 @@ namespace Pav2021.DataAccessLayer
 
         internal bool Update(Perfil oPerfil, int id)
         {
-            var string_conexion = "Data Source=DESKTOP-82E3KBS\\SQLEXPRESS;Initial Catalog=DB_TP;Integrated Security=true;";
+            var string_conexion = "Data Source=NBAR15232;Initial Catalog=DB_TP;Integrated Security=true;";
             SqlConnection dbConnection = new SqlConnection();
             SqlTransaction dbTransaction = null;
             List<Permiso> lst = new List<Permiso>();

@@ -25,9 +25,9 @@ namespace Pav2021.BusinessLayer
         {
             return oPerfilDao.Create(oPerfil);
         }
-        internal bool ActualizarPerfil(Perfil oPerfil)
+        internal bool ActualizarPerfil(Perfil oPerfil, int id)
         {
-            return oPerfilDao.Update(oPerfil);
+            return oPerfilDao.Update(oPerfil, id);
         }
 
         internal bool EliminarPerfil(Perfil oPerfil)
@@ -48,10 +48,10 @@ namespace Pav2021.BusinessLayer
         {
             if (per.DetallePermisos.Count == 0)
             {
-               throw new Exception("Debe selecionar al menos un formulario para el perfil.");
+                throw new Exception("Debe selecionar al menos un formulario para el perfil.");
             }
-            Perfil validacion= (Perfil)ObtenerPerfil(per.Nombre);
-            if(validacion!=null)
+            Perfil validacion = (Perfil)ObtenerPerfil(per.Nombre);
+            if (validacion != null)
             {
                 throw new Exception("El nombre del perfil ya existe.");
             }
