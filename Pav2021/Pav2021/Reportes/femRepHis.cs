@@ -19,9 +19,8 @@ namespace Pav2021.Reportes
 
         private void femRepHis_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'DsReportes.DataTable1' Puede moverla o quitarla según sea necesario.
-            this.DataTable1TableAdapter.Fill(this.DsReportes.DataTable1);
-
+            // TODO: esta línea de código carga datos en la tabla 'dsReportes.DataTable2' Puede moverla o quitarla según sea necesario.
+            this.dataTable2TableAdapter.Fill(this.dsReportes.DataTable2);
             this.reportViewer1.RefreshReport();
         }
     }

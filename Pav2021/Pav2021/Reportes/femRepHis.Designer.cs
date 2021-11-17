@@ -32,17 +32,17 @@ namespace Pav2021.Reportes
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DsReportes = new Pav2021.Reportes.DsReportes();
-            this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataTable1TableAdapter = new Pav2021.Reportes.DsReportesTableAdapters.DataTable1TableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DsReportes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
+            this.dsReportes = new Pav2021.Reportes.DsReportes();
+            this.dataTable2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTable2TableAdapter = new Pav2021.Reportes.DsReportesTableAdapters.DataTable2TableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dsReportes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             reportDataSource1.Name = "DataHistorico";
-            reportDataSource1.Value = this.DataTable1BindingSource;
+            reportDataSource1.Value = this.dataTable2BindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Pav2021.Reportes.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 12);
@@ -51,19 +51,19 @@ namespace Pav2021.Reportes
             this.reportViewer1.Size = new System.Drawing.Size(776, 426);
             this.reportViewer1.TabIndex = 0;
             // 
-            // DsReportes
+            // dsReportes
             // 
-            this.DsReportes.DataSetName = "DsReportes";
-            this.DsReportes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dsReportes.DataSetName = "DsReportes";
+            this.dsReportes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // DataTable1BindingSource
+            // dataTable2BindingSource
             // 
-            this.DataTable1BindingSource.DataMember = "DataTable1";
-            this.DataTable1BindingSource.DataSource = this.DsReportes;
+            this.dataTable2BindingSource.DataMember = "DataTable2";
+            this.dataTable2BindingSource.DataSource = this.dsReportes;
             // 
-            // DataTable1TableAdapter
+            // dataTable2TableAdapter
             // 
-            this.DataTable1TableAdapter.ClearBeforeFill = true;
+            this.dataTable2TableAdapter.ClearBeforeFill = true;
             // 
             // femRepHis
             // 
@@ -74,8 +74,8 @@ namespace Pav2021.Reportes
             this.Name = "femRepHis";
             this.Text = "femRepHis";
             this.Load += new System.EventHandler(this.femRepHis_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DsReportes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsReportes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable2BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -83,8 +83,8 @@ namespace Pav2021.Reportes
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource DataTable1BindingSource;
-        private DsReportes DsReportes;
-        private DsReportesTableAdapters.DataTable1TableAdapter DataTable1TableAdapter;
+        private DsReportes dsReportes;
+        private System.Windows.Forms.BindingSource dataTable2BindingSource;
+        private DsReportesTableAdapters.DataTable2TableAdapter dataTable2TableAdapter;
     }
 }
