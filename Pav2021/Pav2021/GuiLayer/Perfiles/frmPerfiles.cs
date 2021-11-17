@@ -31,7 +31,6 @@ namespace Pav2021.GUILayer.Perfiles
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
             LlenarCombo(cboPerfiles, oPerfilService.ObtenerTodos(), "Nombre", "nombre");
-            LlenarCombo(cboIdPerfil, oPerfilService.ObtenerTodos(), "IdPerfil", "id_perfil");
             this.CenterToParent();
         }
 
@@ -48,12 +47,10 @@ namespace Pav2021.GUILayer.Perfiles
             {
                 if (chkTodos.Checked)
                 {
-                    cboIdPerfil.Enabled = false;
                     cboPerfiles.Enabled = false;
                 }
                 else
                 {
-                    cboIdPerfil.Enabled = true;
                     cboPerfiles.Enabled = true;
                 }
             }
@@ -78,11 +75,7 @@ namespace Pav2021.GUILayer.Perfiles
                 }
 
                 // Validar si el textBox 'Nombre' esta vacio.
-                if (cboIdPerfil.Text != string.Empty)
-                {
-                    // Si el textBox tiene un texto no vacìo entonces recuperamos el valor del texto
-                    filters.Add("idPerfil", cboIdPerfil.SelectedValue);
-                }
+                
 
                 if (filters.Count > 0)
                     dgvPerfiles.DataSource = oPerfilService.ObtenerPerfilesFiltro(filters);

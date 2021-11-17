@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnQuitar = new System.Windows.Forms.Button();
             this.dgvPerfiles = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.chkTodos = new System.Windows.Forms.CheckBox();
-            this.Label3 = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.cboPerfiles = new System.Windows.Forms.ComboBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.pnlFiltros = new System.Windows.Forms.GroupBox();
-            this.cboIdPerfil = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerfiles)).BeginInit();
             this.pnlFiltros.SuspendLayout();
             this.SuspendLayout();
@@ -47,10 +50,9 @@
             // 
             this.btnQuitar.Enabled = false;
             this.btnQuitar.Image = global::Pav2021.Properties.Resources.eliminar;
-            this.btnQuitar.Location = new System.Drawing.Point(81, 404);
-            this.btnQuitar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuitar.Location = new System.Drawing.Point(61, 328);
             this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(53, 50);
+            this.btnQuitar.Size = new System.Drawing.Size(40, 41);
             this.btnQuitar.TabIndex = 11;
             this.btnQuitar.UseVisualStyleBackColor = true;
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
@@ -59,25 +61,55 @@
             // 
             this.dgvPerfiles.AllowUserToAddRows = false;
             this.dgvPerfiles.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvPerfiles.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPerfiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPerfiles.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPerfiles.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvPerfiles.Location = new System.Drawing.Point(4, 146);
-            this.dgvPerfiles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPerfiles.Location = new System.Drawing.Point(3, 99);
             this.dgvPerfiles.Name = "dgvPerfiles";
             this.dgvPerfiles.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPerfiles.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPerfiles.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvPerfiles.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPerfiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPerfiles.Size = new System.Drawing.Size(543, 236);
+            this.dgvPerfiles.Size = new System.Drawing.Size(407, 212);
             this.dgvPerfiles.TabIndex = 8;
             this.dgvPerfiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellClick);
             // 
             // btnSalir
             // 
             this.btnSalir.Image = global::Pav2021.Properties.Resources.salir;
-            this.btnSalir.Location = new System.Drawing.Point(513, 407);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalir.Location = new System.Drawing.Point(385, 331);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(53, 50);
+            this.btnSalir.Size = new System.Drawing.Size(40, 41);
             this.btnSalir.TabIndex = 12;
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -86,10 +118,9 @@
             // 
             this.btnEditar.Enabled = false;
             this.btnEditar.Image = global::Pav2021.Properties.Resources.editar;
-            this.btnEditar.Location = new System.Drawing.Point(20, 404);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Location = new System.Drawing.Point(15, 328);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(53, 50);
+            this.btnEditar.Size = new System.Drawing.Size(40, 41);
             this.btnEditar.TabIndex = 10;
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -97,33 +128,20 @@
             // chkTodos
             // 
             this.chkTodos.AutoSize = true;
-            this.chkTodos.Location = new System.Drawing.Point(99, 92);
-            this.chkTodos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkTodos.Location = new System.Drawing.Point(88, 53);
             this.chkTodos.Name = "chkTodos";
-            this.chkTodos.Size = new System.Drawing.Size(70, 21);
+            this.chkTodos.Size = new System.Drawing.Size(56, 17);
             this.chkTodos.TabIndex = 2;
             this.chkTodos.Text = "Todos";
             this.chkTodos.UseVisualStyleBackColor = true;
             this.chkTodos.CheckedChanged += new System.EventHandler(this.chkTodos_CheckedChanged);
             // 
-            // Label3
-            // 
-            this.Label3.AutoSize = true;
-            this.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Label3.Location = new System.Drawing.Point(31, 30);
-            this.Label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(55, 17);
-            this.Label3.TabIndex = 17;
-            this.Label3.Text = "Id Perfil";
-            // 
             // btnConsultar
             // 
             this.btnConsultar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnConsultar.Location = new System.Drawing.Point(415, 106);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultar.Location = new System.Drawing.Point(320, 70);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(116, 28);
+            this.btnConsultar.Size = new System.Drawing.Size(87, 23);
             this.btnConsultar.TabIndex = 3;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -132,20 +150,18 @@
             // cboPerfiles
             // 
             this.cboPerfiles.FormattingEnabled = true;
-            this.cboPerfiles.Location = new System.Drawing.Point(99, 59);
-            this.cboPerfiles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboPerfiles.Location = new System.Drawing.Point(88, 26);
             this.cboPerfiles.Name = "cboPerfiles";
-            this.cboPerfiles.Size = new System.Drawing.Size(240, 24);
+            this.cboPerfiles.Size = new System.Drawing.Size(181, 21);
             this.cboPerfiles.TabIndex = 1;
             // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblEstado.Location = new System.Drawing.Point(43, 62);
-            this.lblEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEstado.Location = new System.Drawing.Point(46, 28);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(44, 17);
+            this.lblEstado.Size = new System.Drawing.Size(33, 13);
             this.lblEstado.TabIndex = 0;
             this.lblEstado.Text = "Perfil:";
             // 
@@ -153,44 +169,30 @@
             // 
             this.pnlFiltros.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlFiltros.BackColor = System.Drawing.Color.Transparent;
-            this.pnlFiltros.Controls.Add(this.cboIdPerfil);
             this.pnlFiltros.Controls.Add(this.dgvPerfiles);
             this.pnlFiltros.Controls.Add(this.chkTodos);
-            this.pnlFiltros.Controls.Add(this.Label3);
             this.pnlFiltros.Controls.Add(this.btnConsultar);
             this.pnlFiltros.Controls.Add(this.cboPerfiles);
             this.pnlFiltros.Controls.Add(this.lblEstado);
             this.pnlFiltros.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnlFiltros.Location = new System.Drawing.Point(16, 14);
-            this.pnlFiltros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlFiltros.Location = new System.Drawing.Point(12, 11);
             this.pnlFiltros.Name = "pnlFiltros";
-            this.pnlFiltros.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnlFiltros.Size = new System.Drawing.Size(551, 386);
+            this.pnlFiltros.Size = new System.Drawing.Size(413, 314);
             this.pnlFiltros.TabIndex = 8;
             this.pnlFiltros.TabStop = false;
             this.pnlFiltros.Text = "Filtros";
             // 
-            // cboIdPerfil
-            // 
-            this.cboIdPerfil.FormattingEnabled = true;
-            this.cboIdPerfil.Location = new System.Drawing.Point(99, 28);
-            this.cboIdPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cboIdPerfil.Name = "cboIdPerfil";
-            this.cboIdPerfil.Size = new System.Drawing.Size(240, 24);
-            this.cboIdPerfil.TabIndex = 18;
-            // 
             // frmPerfiles
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Pav2021.Properties.Resources.prueba;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(588, 466);
+            this.ClientSize = new System.Drawing.Size(441, 379);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.pnlFiltros);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPerfiles";
@@ -212,11 +214,9 @@
         internal System.Windows.Forms.Button btnSalir;
         internal System.Windows.Forms.Button btnEditar;
         internal System.Windows.Forms.CheckBox chkTodos;
-        internal System.Windows.Forms.Label Label3;
         internal System.Windows.Forms.Button btnConsultar;
         internal System.Windows.Forms.ComboBox cboPerfiles;
         internal System.Windows.Forms.Label lblEstado;
         internal System.Windows.Forms.GroupBox pnlFiltros;
-        internal System.Windows.Forms.ComboBox cboIdPerfil;
     }
 }
