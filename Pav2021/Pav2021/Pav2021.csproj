@@ -147,6 +147,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\DsReportes.cs">
+      <DependentUpon>DsReportes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\DsReportes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

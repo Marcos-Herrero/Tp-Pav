@@ -112,10 +112,9 @@ namespace Pav2021.DataAccessLayer
         public IList<Perfil> GetByFilters(Dictionary<string, object> parametros)
         {
             List<Perfil> lst = new List<Perfil>();
-            var strSql = string.Concat(" SELECT p.id_perfil, p.nombre, f.nombre ",
-                                        "   FROM Formularios f  INNER JOIN Permisos per ON f.id_formulario = per.id_formulario ",
-                                         "   INNER JOIN Perfiles p ON per.id_perfil=p.id_perfil",
-                                         "where p.borrado=0");
+            var strSql = string.Concat(" SELECT p.id_perfil, p.nombre ",
+                                        "   FROM  Perfiles p ",
+                                         " where p.borrado=0");
 
             if (parametros.ContainsKey("idPerfil"))
                 strSql += " AND (id_perfil = @idPerfil) ";

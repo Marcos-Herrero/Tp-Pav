@@ -1156,8 +1156,7 @@ namespace Pav2021.Reportes.DsReportesTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=NBAR15232;Initial Catalog=DB_TP;Integrated Security=" +
-                "True";
+            this._connection.ConnectionString = global::Pav2021.Properties.Settings.Default.DB_TPConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1166,11 +1165,11 @@ namespace Pav2021.Reportes.DsReportesTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        Usuarios.usuario, Perfiles.nombre, HistoricoDeAsignaciones.fecha_historico
-FROM            HistoricoDeAsignaciones INNER JOIN
-                         Usuarios ON HistoricoDeAsignaciones.id_usuario = Usuarios.id_usuario INNER JOIN
-                         Perfiles ON HistoricoDeAsignaciones.id_perfil = Perfiles.id_perfil AND Usuarios.id_perfil = Perfiles.id_perfil
-WHERE        (Usuarios.borrado = 0)";
+            this._commandCollection[0].CommandText = @"SELECT Usuarios.usuario, Perfiles.nombre, HistoricoDeAsignaciones.fecha_historico
+FROM     HistoricoDeAsignaciones INNER JOIN
+                  Perfiles ON HistoricoDeAsignaciones.id_perfil = Perfiles.id_perfil INNER JOIN
+                  Usuarios ON HistoricoDeAsignaciones.id_usuario = Usuarios.id_usuario
+WHERE  (Usuarios.borrado = 0)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1329,8 +1328,7 @@ WHERE        (Usuarios.borrado = 0)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=NBAR15232;Initial Catalog=DB_TP;Integrated Security=" +
-                "True";
+            this._connection.ConnectionString = global::Pav2021.Properties.Settings.Default.DB_TPConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

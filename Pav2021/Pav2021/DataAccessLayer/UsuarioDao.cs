@@ -27,7 +27,7 @@ namespace Pav2021.DataAccessLayer
         public IList<Usuario> GetUsuarios()
         {
             List<Usuario> listadoUsuarios = new List<Usuario>();
-            string consulta = "SELECT TOP 20 id_usuario, P.nombre, P.id_perfil, usuario,email,estado,password " +
+            string consulta = "SELECT id_usuario, P.nombre, P.id_perfil, usuario,email,estado,password " +
                     " FROM Usuarios U JOIN Perfiles P ON U.id_perfil = P.id_perfil " +
                     " WHERE U.borrado = 0 " +
                     " ORDER BY id_usuario DESC";

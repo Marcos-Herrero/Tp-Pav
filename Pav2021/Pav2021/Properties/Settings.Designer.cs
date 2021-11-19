@@ -22,5 +22,15 @@ namespace Pav2021.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NBAR15232;Initial Catalog=DB_TP;Integrated Security=True")]
+        public string DB_TPConnectionString {
+            get {
+                return ((string)(this["DB_TPConnectionString"]));
+            }
+        }
     }
 }

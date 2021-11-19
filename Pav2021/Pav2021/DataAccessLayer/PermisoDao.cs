@@ -12,8 +12,8 @@ namespace Pav2021.DataAccessLayer
         {
             List<Permiso> listadoPermisos = new List<Permiso>();
 
-            var strSql = string.Concat(" SELECT f.nombre, f.id_formulario,  ",
-                                              "    p.nombre, p.id_perfil ",
+            var strSql = string.Concat(" SELECT f.nombre , f.id_formulario,  ",
+                                              "    p.nombre , p.id_perfil ",
                                               "   FROM Formularios f INNER JOIN Permisos per ON f.id_formulario = per.id_formulario ",
                                               "   INNER JOIN Perfiles p ON per.id_perfil=p.id_perfil");
                                               
@@ -22,7 +22,7 @@ namespace Pav2021.DataAccessLayer
 
             foreach (DataRow row in resultadoConsulta.Rows)
             {
-                listadoPermisos.Add(ObjectMapping(row));
+                listadoPermisos.Add(ObjectMappingFiltro(row));
             }
 
             return listadoPermisos;
@@ -63,7 +63,7 @@ namespace Pav2021.DataAccessLayer
             parametros.Add("id_perfil", idPerfil);
             var resultado = DataManager.GetInstance().ConsultaSql(strSql, parametros);
             foreach (DataRow row in resultado.Rows)
-                lst.Add(ObjectMapping(row));
+                lst.Add(ObjectMappingFiltro(row));
 
             return lst;
         }
@@ -145,7 +145,19 @@ namespace Pav2021.DataAccessLayer
             oPermiso.Formulario.Nombre = row["nombre"].ToString();
             oPermiso.Formulario.Id_Formulario = Convert.ToInt32(row["Id_Formulario"].ToString());
             return oPermiso;
-        }           
-        
+        }
+        private Permiso ObjectMappingFiltro(DataRow row)
+        {
+            Permiso oPermiso = new Permiso();
+            oPermiso.Perfil = new Perfil();
+            oPermiso.Perfil.Id_Perfil = Convert.ToInt32(row["id_perfil"].ToString());
+            oPermiso.Perfil.Nombre = row["nombre1"].ToString();
+            oPermiso.Formulario = new Formulario();
+            oPermiso.Formulario.Nombre = row["nombre"].ToString();
+            oPermiso.Formulario.Id_Formulario = Convert.ToInt32(row["Id_Formulario"].ToString());
+            return oPermiso;
+        }
+
+
     }
 }
